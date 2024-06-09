@@ -199,3 +199,4 @@ $(function () {
       shuffleme.init(); //filter portfolio
     };
 }());
+
