@@ -18,7 +18,7 @@
     <meta property="og:url" content="https://www.sanjaykadel.com.np/">
     <meta property="og:title" content="Sanjay Kadel - IT Officer & Full Stack Developer Nepal">
     <meta property="og:description" content="Portfolio of Sanjay Kadel - IT Professional and Full Stack Developer from Nepal specializing in Python Django React Web Development.">
-    <meta property="og:image" content="https://www.sanjaykadel.com.np/img/sanjay-kadel-profile-og.jpg">
+    <meta property="og:image" content="https://www.sanjaykadel.com.np/assets/img/sanjay-kadel-profile-og.jpg">
     <meta property="og:image:alt" content="Sanjay Kadel - IT Professional Profile Nepal">
     <meta property="og:site_name" content="Sanjay Kadal Portfolio Nepal">
     <meta property="og:locale" content="en_US">
@@ -29,7 +29,7 @@
     <meta property="twitter:url" content="https://www.sanjaykadel.com.np/">
     <meta property="twitter:title" content="Sanjay Kadel - IT Officer & Full Stack Developer">
     <meta property="twitter:description" content="Expert Python and Web Developer from Nepal. IT Officer at Benighat Rorang Rural Municipality Dhading.">
-    <meta property="twitter:image" content="https://www.sanjaykadel.com.np/img/sanjay-kadel-twitter-card.jpg">
+    <meta property="twitter:image" content="https://www.sanjaykadel.com.np/assets/img/sanjay-kadel-twitter-card.jpg">
     <meta property="twitter:site" content="@sanjaykadel">
     
     <!-- Canonical URL -->
@@ -51,7 +51,7 @@
           "@id": "https://www.sanjaykadel.com.np/#person",
           "name": "Sanjay Kadel",
           "url": "https://www.sanjaykadel.com.np",
-          "image": "https://www.sanjaykadel.com.np/img/profile.JPG",
+          "image": "https://www.sanjaykadel.com.np/assets/img/profile.jpg",
           "sameAs": [
             "https://github.com/sanjaykadel",
             "https://np.linkedin.com/in/sanjaykadel",
@@ -421,7 +421,7 @@
             background: rgba(255, 0, 0, 0.2);
         }
 
-        /* Side-by-side Hero Section */
+        /* Side-by-side Hero Section - Fixed for portrait image */
         .hero {
             padding: 160px 0 100px;
             min-height: 100vh;
@@ -465,8 +465,22 @@
             z-index: 2;
         }
 
+        @media (max-width: 1100px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         .hero-content {
             padding-right: 20px;
+        }
+
+        @media (max-width: 1100px) {
+            .hero-content {
+                padding-right: 0;
+                text-align: center;
+            }
         }
 
         .hero-image-wrapper {
@@ -474,12 +488,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
         }
 
         .hero-image {
             width: 100%;
-            max-width: 420px;
+            max-width: 500px; /* Increased for larger portrait */
             height: auto;
+            aspect-ratio: 3/4; /* Portrait aspect ratio */
             border-radius: 30px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
             position: relative;
@@ -487,6 +503,8 @@
             border: 8px solid white;
             transition: var(--transition);
             animation: float 6s ease-in-out infinite;
+            object-fit: cover;
+            object-position: center top;
         }
 
         body.gangster-mode .hero-image {
@@ -538,6 +556,18 @@
             transition: var(--transition);
         }
 
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
         body.gangster-mode .hero h1 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
@@ -558,6 +588,18 @@
             transition: var(--transition);
         }
 
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+        }
+
         body.gangster-mode .hero h2 {
             font-family: 'Orbitron', sans-serif;
             color: var(--gangster-secondary);
@@ -575,6 +617,12 @@
             transition: var(--transition);
         }
 
+        @media (max-width: 768px) {
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
         body.gangster-mode .hero p {
             color: #cccccc;
             font-family: 'Kalam', cursive;
@@ -586,6 +634,12 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
+        }
+
+        @media (max-width: 1100px) {
+            .btn-group {
+                justify-content: center;
+            }
         }
 
         .btn {
@@ -605,6 +659,20 @@
             font-size: 1rem;
             gap: 10px;
             min-width: 180px;
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                min-width: 160px;
+                padding: 14px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
         }
 
         body.gangster-mode .btn {
@@ -683,6 +751,12 @@
             transition: var(--transition);
         }
 
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+        }
+
         body.gangster-mode section {
             background: var(--gangster-dark);
             position: relative;
@@ -708,6 +782,12 @@
             transition: var(--transition);
         }
 
+        @media (max-width: 768px) {
+            .section-title {
+                margin-bottom: 50px;
+            }
+        }
+
         body.gangster-mode .section-title {
             font-family: 'Orbitron', sans-serif;
         }
@@ -720,6 +800,24 @@
             padding-bottom: 20px;
             font-weight: 700;
             transition: var(--transition);
+        }
+
+        @media (max-width: 992px) {
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
         }
 
         body.gangster-mode .section-title h2 {
@@ -753,10 +851,23 @@
             align-items: start;
         }
 
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .info-card {
@@ -863,6 +974,12 @@
             padding-left: 30px;
         }
 
+        @media (max-width: 768px) {
+            .work-timeline {
+                padding-left: 20px;
+            }
+        }
+
         .work-timeline::before {
             content: '';
             position: absolute;
@@ -929,6 +1046,12 @@
             z-index: 2;
         }
 
+        @media (max-width: 768px) {
+            .work-item::before {
+                left: -28px;
+            }
+        }
+
         body.gangster-mode .work-item::before {
             background: var(--gangster-dark);
             border: 4px solid var(--gangster-accent);
@@ -942,6 +1065,14 @@
             margin-bottom: 15px;
             flex-wrap: wrap;
             gap: 15px;
+        }
+
+        @media (max-width: 576px) {
+            .work-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }
 
         .work-title h3 {
@@ -979,6 +1110,12 @@
             white-space: nowrap;
         }
 
+        @media (max-width: 576px) {
+            .work-period {
+                align-self: flex-start;
+            }
+        }
+
         body.gangster-mode .work-period {
             background: rgba(255, 0, 0, 0.2);
             color: var(--gangster-accent);
@@ -1003,6 +1140,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 35px;
+        }
+
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         .skill-category {
@@ -1151,6 +1294,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 35px;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .project-card {
@@ -1324,6 +1473,24 @@
             background: white;
         }
 
+        @media (max-width: 992px) {
+            .gallery-slider {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-slider {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-slider {
+                height: 250px;
+            }
+        }
+
         body.gangster-mode .gallery-slider {
             background: #000000;
             box-shadow: 
@@ -1414,6 +1581,14 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
+        @media (max-width: 768px) {
+            .prev-slide, .next-slide {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+            }
+        }
+
         body.gangster-mode .prev-slide, 
         body.gangster-mode .next-slide {
             background-color: rgba(255, 0, 0, 0.5);
@@ -1437,8 +1612,20 @@
             left: 25px;
         }
 
+        @media (max-width: 768px) {
+            .prev-slide {
+                left: 15px;
+            }
+        }
+
         .next-slide {
             right: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .next-slide {
+                right: 15px;
+            }
         }
 
         /* Contact Section */
@@ -1449,12 +1636,25 @@
             align-items: start;
         }
 
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         .contact-info {
             background: white;
             padding: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 576px) {
+            .contact-info {
+                padding: 30px 20px;
+            }
         }
 
         body.gangster-mode .contact-info {
@@ -1540,6 +1740,12 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 576px) {
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+
         body.gangster-mode .contact-form {
             background: rgba(0, 0, 0, 0.7);
             border: 1px solid var(--gangster-secondary);
@@ -1615,6 +1821,13 @@
             gap: 25px;
         }
 
+        @media (max-width: 992px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(135deg, #1a2a3a 0%, #0f172a 100%);
@@ -1649,6 +1862,13 @@
             grid-template-columns: 1.5fr 1fr;
             gap: 60px;
             margin-bottom: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
         }
 
         .footer-info h3 {
@@ -1716,6 +1936,13 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
+        }
+
+        @media (max-width: 576px) {
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
 
         .footer-column h4 {
@@ -1813,6 +2040,16 @@
             z-index: 999;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             border: none;
+        }
+
+        @media (max-width: 576px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+            }
         }
 
         body.gangster-mode .back-to-top {
@@ -1929,61 +2166,7 @@
             border: 1px solid #e74c3c;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.4rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                text-align: center;
-            }
-            
-            .hero-content {
-                padding-right: 0;
-            }
-            
-            .hero-image {
-                max-width: 350px;
-                margin: 0 auto;
-            }
-            
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .gallery-slider {
-                height: 400px;
-            }
-        }
-
+        /* Responsive Design for Navigation */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -2040,108 +2223,6 @@
             .language-toggle {
                 margin: 20px 0 0;
                 justify-content: center;
-            }
-            
-            .hero {
-                padding: 140px 0 80px;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.6rem;
-            }
-            
-            .btn-group {
-                justify-content: center;
-            }
-            
-            .btn {
-                min-width: 160px;
-                padding: 14px 30px;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-slider {
-                height: 300px;
-            }
-            
-            .prev-slide, .next-slide {
-                width: 48px;
-                height: 48px;
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.4rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-            
-            .btn-group {
-                gap: 15px;
-            }
-            
-            .work-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .work-period {
-                align-self: flex-start;
-            }
-            
-            .gallery-slider {
-                height: 250px;
-            }
-            
-            .contact-info,
-            .contact-form {
-                padding: 30px 20px;
-            }
-            
-            .footer-links {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 48px;
-                height: 48px;
-                font-size: 1.3rem;
             }
         }
 
@@ -2273,13 +2354,13 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-bg-shape"></div>
-                    <img src="img/profile.JPG" 
+                    <img src="/assets/img/profile.jpg" 
                          class="hero-image" 
                          alt="Sanjay Kadel - IT Officer and Full Stack Developer from Nepal" 
                          itemprop="image"
                          loading="eager"
-                         width="420"
-                         height="420">
+                         width="500"
+                         height="667">
                 </div>
             </main>
         </div>
@@ -2879,23 +2960,23 @@
             <div class="gallery-container">
                 <div class="gallery-slider">
                     <div class="slides-container" id="slidesContainer">
-                        <div class="slide" style="background-image: url('img/1.JPG');" 
+                        <div class="slide" style="background-image: url('/assets/img/1.jpg');" 
                              aria-label="Mountain landscape photography by Sanjay Kadel" 
                              role="img"
                              itemprop="image"></div>
-                        <div class="slide" style="background-image: url('img/6.JPG');" 
+                        <div class="slide" style="background-image: url('/assets/img/6.jpg');" 
                              aria-label="Forest photography by Sanjay Kadel" 
                              role="img"
                              itemprop="image"></div>
-                        <div class="slide" style="background-image: url('img/7.JPG');" 
+                        <div class="slide" style="background-image: url('/assets/img/7.jpg');" 
                              aria-label="Nature photography by Sanjay Kadel" 
                              role="img"
                              itemprop="image"></div>
-                        <div class="slide" style="background-image: url('img/8.JPG');" 
+                        <div class="slide" style="background-image: url('/assets/img/8.jpg');" 
                              aria-label="Landscape photography by Sanjay Kadel" 
                              role="img"
                              itemprop="image"></div>
-                        <div class="slide" style="background-image: url('img/10.JPG');" 
+                        <div class="slide" style="background-image: url('/assets/img/10.jpg');" 
                              aria-label="Sky photography by Sanjay Kadel" 
                              role="img"
                              itemprop="image"></div>
@@ -2983,26 +3064,40 @@
                             <p itemprop="url">https://www.sanjaykadel.com.np</p>
                         </div>
                     </div>
-                    
-                    <!-- Formspree Contact Form -->
                 </div>
                 
                 <div class="contact-form">
                     <h3 class="english">Quick Contact Form</h3>
                     <h3 class="nepali nepali-text">द्रुत सम्पर्क फारम</h3>
                     
-                 <form id="contact-form" action="https://formspree.io/f/mrgnnzln" method="POST">
-                    <label>
-                      Your email:
-                      <input type="email" name="email">
-                    </label>
-                    <label>
-                      Your message:
-                      <textarea name="message"></textarea>
-                    </label>
-                    <!-- your other form fields go here -->
-                    <button type="submit">Send</button>
-                  </form>
+                    <form id="contact-form" action="https://formspree.io/f/mrgnnzln" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="english">Name</label>
+                            <label for="name" class="nepali nepali-text">नाम</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="english">Email</label>
+                            <label for="email" class="nepali nepali-text">इमेल</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="english">Subject</label>
+                            <label for="subject" class="nepali nepali-text">विषय</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="english">Message</label>
+                            <label for="message" class="nepali nepali-text">सन्देश</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn english">Send Message</button>
+                        <button type="submit" class="btn nepali nepali-text">सन्देश पठाउनुहोस्</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -3106,7 +3201,7 @@
         const slideDots = document.querySelectorAll('.slide-dot');
         const prevSlide = document.getElementById('prevSlide');
         const nextSlide = document.getElementById('nextSlide');
-        const contactForm = document.getElementById('contactForm');
+        const contactForm = document.getElementById('contact-form');
         
         // Language Management
         let isEnglish = true;
@@ -3350,7 +3445,10 @@
             mobileMenuBtn.addEventListener('click', toggleMobileMenu);
             languageToggle.addEventListener('click', toggleLanguage);
             backToTop.addEventListener('click', scrollToTop);
-            contactForm.addEventListener('submit', handleFormSubmit);
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleFormSubmit);
+            }
             
             // Navigation links - close menu on click
             document.querySelectorAll('.nav-link').forEach(link => {
